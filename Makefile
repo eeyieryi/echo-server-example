@@ -1,5 +1,10 @@
-echo-in-c: echo.c
-	cc -o echo-in-c echo.c
+all: echo echo-multi echo-go
 
-echo-in-go: echo.go
-	go run echo.go
+echo: echo.c
+	cc -o echo echo.c
+
+echo-multi: echo-multi.c
+	cc -o echo-multi echo-multi.c
+
+echo-go: echo.go
+	go build -o echo-go echo.go
